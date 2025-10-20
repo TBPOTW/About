@@ -13,8 +13,8 @@ nav {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 10;
-  padding: 30px 0;
+  z-index: 100;
+  padding: 10px 0;
 }
 
 .menu {
@@ -52,7 +52,7 @@ footer {
   background: #222;
   color: white;
   text-align: center;
-  padding: 15px 0;
+  padding: 1px 0;
   font-size: 18px;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.3);
   z-index: 50;
@@ -70,16 +70,162 @@ main {
   z-index: 60; 
 }
 
-section h2 {
+/* Стиль заголовков по умолчанию */
+h2 {
   font-size: 32px;
   margin-bottom: 20px;
-  color: #1c2c54;
   text-align: center;
+  transition: color 0.5s ease; /* Плавная смена цвета */
 }
+
+/* Светлая тема */
+body.light-theme h2 {
+  color: #000000; /* Черный текст */
+}
+
+/* Тёмная тема */
+body.dark-theme h2 {
+  color: #ffffff; /* Белый текст */
+}
+
 
 section p, section li {
   font-size: 20px;
 }
+
+/* Стиль кнопки */
+.theme-button {
+  position: fixed;
+  top: 7px;
+  right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-button:hover {
+  transform: rotate(90deg);
+}
+
+/* Темы */
+body.light-theme {
+  background: #ffffff;
+  color: #000000;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark-theme {
+  background: #1e1e1e;
+  color: #ffffff;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Стили для светлой темы */
+/* Стили для светлой темы */
+body.light-theme main {
+  background: white;
+  color: black;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: background 0.5s ease, color 0.5s ease; /* Плавная смена */
+}
+
+/* Стили для тёмной темы */
+body.dark-theme main {
+  background: #2d2d2d;
+  color: white;
+  box-shadow: 0 6px 20px rgb(100, 100, 100);
+  transition: background 0.5s ease, color 0.5s ease; /* Плавная смена */
+}
+
+/* Стили для светлой темы */
+body.light-theme nav {
+  background: #ffffff;       /* Белый фон */
+  color: #000000;            /* Чёрный текст */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Тёмная тень */
+  transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Стили для тёмной темы */
+body.dark-theme nav {
+  background: #1e1e1e;       /* Темный фон */
+  color: #ffffff;            /* Белый текст */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1); /* Белая тень */
+  transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Стили для светлой темы */
+body.light-theme .menu a {
+  color: #333; /* Основной цвет текста */
+  transition: all 0.3s ease;
+}
+
+body.light-theme .menu a:hover {
+  color: #007bff; /* Цвет при наведении */
+  background: rgba(0, 123, 255, 0.1); /* Тёмно-синий фон */
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.4); /* Синяя тень */
+  transform: scale(1.1);
+}
+
+/* Стили для тёмной темы */
+body.dark-theme .menu a {
+  color: #ffffff; /* Белый текст */
+  transition: all 0.3s ease;
+}
+
+body.dark-theme .menu a:hover {
+  color: #00ffcc; /* Ярно-зелёный при наведении */
+  background: rgba(0, 255, 204, 0.1); /* Зелёный фон */
+  box-shadow: 0 0 25px rgba(0, 255, 204, 0.4); /* Зелёная тень */
+  transform: scale(1.1);
+}
+
+/* Стиль кнопки темы */
+.theme-button {
+  position: fixed;
+  top: 7px;
+  right: 20px;
+  background: none;
+  border: 2px solid transparent; /* Рамка */
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Светлая тема */
+body.light-theme .theme-button {
+  background-color: white;
+  border-color: #ccc;
+  color: #333; /* Цвет иконки */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Тёмная тема */
+body.dark-theme .theme-button {
+  background-color: #1e1e1e;
+  border-color: #444;
+  color: #ffffff; /* Цвет иконки */
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Стиль для обычных ссылок */
+a {
+  color: #007bff; /* Голубой по умолчанию */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Анимация наведения */
+.theme-button:hover {
+  transform: scale(1.1);
+}
+
+/* Анимация иконки */
+#theme-icon {
+  transition: transform 0.3s ease, stroke 0.3s ease;
+}
+
 
 ul {
   padding-left: 30px;
@@ -112,4 +258,22 @@ ul {
 .email:hover { color: #d44638; }
 .telegram:hover { color: #0088cc; }
 .tiktok:hover { color: #313131; }
+
+/* Стиль для тёмной темы */
+body.dark-theme .social {
+  color: #ffffff; /* Белый цвет по умолчанию */
+}
+
+/* Эффекты при наведении в тёмной теме */
+body.dark-theme .social:hover {
+  transform: scale(1.3);
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Белая тень */
+}
+
+/* Индивидуальные цвета для соцсетей в тёмной теме */
+body.dark-theme .github:hover { color: #ffffff; }      /* Белый для GitHub */
+body.dark-theme .email:hover { color: #ff9999; }       /* Ярно-розовый для Email */
+body.dark-theme .telegram:hover { color: #00ffff; }    /* Голубой для Telegram */
+body.dark-theme .tiktok:hover { color: #ffffff; }      /* Белый для TikTok */
+
 
