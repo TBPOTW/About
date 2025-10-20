@@ -10,7 +10,11 @@ body.classList.add(currentTheme);
 
 // Переключение тем
 toggleButton.addEventListener('click', () => {
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
   if (body.classList.contains('light-theme')) {
     body.classList.replace('light-theme', 'dark-theme');
     icon.setAttribute('d', 'M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'); // Иконка луны
