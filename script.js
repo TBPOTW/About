@@ -20,3 +20,16 @@ toggleButton.addEventListener('click', () => {
     localStorage.setItem('theme', 'light-theme');
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Заполнение года
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Логика переключения темы
+  const button = document.getElementById("theme-toggle");
+  if (button) {
+    button.addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+    });
+  }
+});
